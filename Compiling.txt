@@ -1,0 +1,48 @@
+Duq Engine Compiling Guide
+
+For Windows
+
+  Prerequisites:
+   https://www.sfml-dev.org/download.php The SFML SDK is required for proper linking.
+   https://visualstudio.microsoft.com/ Choose Visual Studio instead of Visual Studio Code. The community version is free.
+   http://glew.sourceforge.net/index.html Download the prebult binaries and install them.
+
+ For compiling on windows you will need Visual Studio to link SFML Libraries (SFML/Graphics, SFML/System, SFML/Window, SFML/Audio, SFML/Network) for creating the window and GLEW (GL/glew) for OpenGL.
+
+  For further information:
+   https://www.sfml-dev.org/tutorials/2.5/start-vc.php
+   https://youtu.be/H2E3yO0J7TM?t=295
+
+For Linux
+
+  Prerequisites:
+   
+   Arch:
+    sudo pacman -S sfml
+    sudo pacman -S glew
+
+   Debian:
+    sudo apt-get install libsfml-dev
+    sudo apt install libglew-dev
+
+   Fedora:
+    sudo yum install sfml
+    sudo yum install glew
+
+   MinGW GCC should already be installed on Linux.
+
+ Compiling on Linux is a lot easier and just uses MinGW g++. I've made files for running and compiling in the form shell scripts which you can just run in the terminal or double click.
+
+For Mac
+
+  Prerequisites:
+   https://developer.apple.com/xcode/
+   https://releases.llvm.org/download.html
+   https://www.sfml-dev.org/files/SFML-2.5.1-macOS-clang.tar.gz
+   brew install glew If you have Brew installed. I don't have MacOS so it might be preinstalled.
+
+ Use clang and Xcode to compile the main file. Again, be sure to link and include SFML Libraries (SFML/Graphics, SFML/System, SFML/Window, SFML/Audio, SFML/Network) for creating the window and GLEW (GL/glew) for OpenGL
+
+  For more information:
+   https://www.sfml-dev.org/tutorials/2.5/start-osx.php
+   https://stackoverflow.com/questions/17600917/how-to-link-glew-in-xcode#:~:text=You%20need%20to%20configure%20Xcode,the%20contents%20of%20the%20binary.&text=Add%20the%20path%20to%20the,should%20be%20%23include%20%3Cglew.
