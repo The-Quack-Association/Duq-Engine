@@ -67,12 +67,20 @@ int main() {
     sf::Event ev;
 
     // Initializes GLEW
-    glewExperimental = true;
+    glewExperimental = GL_TRUE;
     if (!glewInit) {
         error("Failed to initialize GLEW");
     } else if (glewInit) {
         info("GLEW initialized successfully");
     }
+
+    // Initialize Viewport
+    cameraInit(xCameraPos, yCameraPos, window.getSize().x, window.getSize().y);
+    info("Set viewport to:");
+    extra("Width", std::to_string(windowWidth));
+    extra("Height", std::to_string(windowHeight));
+    extra("X Position", std::to_string(xCameraPos));
+    extra("Y Position", std::to_string(yCameraPos));
 
     // Just prints the resolution for future reference when debugging
     info("Window created with the resolution of:");
@@ -82,7 +90,6 @@ int main() {
 
     // Initialize players and enemies
     playerInit(window.getSize().x, window.getSize().y);
-
 
     // Begins the Developer Qonsole
     // qonsoleBegin(); // Read further down for more info on why this is commented
@@ -124,6 +131,8 @@ int main() {
         missingBackground();
 
         glBegin(GL_TRIANGLES);
+
+        // camera();
 
         // Draw stuff on the screen
         player(xtlc, ytlc, xbrc, ybrc, xPlayerSpeed, yPlayerSpeed);

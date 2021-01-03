@@ -51,10 +51,11 @@
 
 // Include other libraries
 #include <iostream>
+#include "usrfiles/camera.h"
 #include "usrfiles/player.h"
 
 
-// Varianles
+// Variables
 float red = 0;
 float green = 0;
 float blue = 0;
@@ -63,6 +64,17 @@ float x_corner_top_left;
 float y_corner_top_left;
 float x_corner_bottom_right;
 float y_corner_bottom_right;
+int windowWidth;
+int windowHeight;
+
+void cameraInit(int X_POS, int Y_POS, int WIDTH, int HEIGHT) {
+
+    windowWidth = WIDTH;
+    windowHeight = HEIGHT;
+
+    glViewport(X_POS, Y_POS, WIDTH, HEIGHT);
+
+}
 
 void missingBackground() {
     if (red <= 0) {
@@ -80,6 +92,7 @@ void missingBackground() {
 }
 
 void playerInit(int WINDOW_WIDTH, int WINDOW_HEIGHT) {
+
     // Adjusts sizes and movement to the screen
     // Ye know
     // So it doesn't do that weird stretching thing
@@ -89,6 +102,40 @@ void playerInit(int WINDOW_WIDTH, int WINDOW_HEIGHT) {
 
     // std::cout << WINDOW_WIDTH << "\n" << WINDOW_HEIGHT << "\n"; // Commented out because it's only for debugging
 }
+
+/*
+void camera() {
+
+    // Keyboard input
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8)) {              // The base for upwards camera movement
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {          // If the camera Right key is ALSO pressed then move diagonally
+            yCameraPos = yCameraPos + 100;
+            xCameraPos = xCameraPos + 100;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {   // If the camera Left key is ALSO pressed then move diagonally
+            yCameraPos = yCameraPos + 100;
+            xCameraPos = xCameraPos - 100;
+        } else {                                                    // If only the camera Up key is pressed then just move up
+            yCameraPos = yCameraPos + 100;
+        }
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2)) {       // The base for downwards camera movement
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {          // If the camera Right key is ALSO pressed then move diagonally
+            yCameraPos = yCameraPos - 100;
+            xCameraPos = xCameraPos + 100;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {   // If the camera Left key is ALSO pressed then move diagonally
+            yCameraPos = yCameraPos - 100;
+            xCameraPos = xCameraPos - 100;
+        } else {                                                    // If only the camera Down key is pressed then just move down
+            yCameraPos = yCameraPos - 100;
+        }
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {       // If only the camera Right key is pressed then just move right
+        xCameraPos = xCameraPos + 100;
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {       // If only the camera Left key is pressed then just move left
+        xCameraPos = xCameraPos - 100;
+    }
+    glViewport(xCameraPos, yCameraPos, windowWidth, windowHeight);
+
+}
+*/
 
 void player(float X_CORNERTL, float Y_CORNERTL, float X_CORNERBR, float Y_CORNERBR, float X_PLAYER_SPEED, float Y_PLAYER_SPEED) {
 
