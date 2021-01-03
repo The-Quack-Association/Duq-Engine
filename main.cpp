@@ -53,8 +53,17 @@ bool setFullscreen = false;
 // The main function
 int main() {
 
+    // Sets the settings for OpenGL
+    sf::ContextSettings GLsettings;
+    info("OpenGL Configured with these settings:");
+    GLsettings.depthBits = 24;
+    extra("Depth Bits", std::to_string(GLsettings.depthBits));
+    GLsettings.majorVersion = 4;
+    GLsettings.minorVersion = 6;
+    cout << BOLDMAGENTA << "Version" << ": " << WHITE << GLsettings.majorVersion << "." << GLsettings.minorVersion << "\n";
+
     // Create the window and initialize the event
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "Duq Engine", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Duq Engine", sf::Style::Titlebar | sf::Style::Close, GLsettings);
     sf::Event ev;
 
     // Initializes GLEW
