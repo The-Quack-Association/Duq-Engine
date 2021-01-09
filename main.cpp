@@ -44,7 +44,6 @@
 
 // Import other things
 #include <iostream>
-#include "informationType.h"
 #include "program/qonsole.h"
 
 // Variables
@@ -88,8 +87,25 @@ int main() {
     extra("Height", std::to_string(window.getSize().y));
 
 
-    // Initialize players and enemies
-    playerInit(window.getSize().x, window.getSize().y);
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////Initialize players and enemies///////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+
+Player player0;
+player0.playerInit(window.getSize().x, window.getSize().y, xtlc, ytlc, xbrc, ybrc, PlayerSpeed);
+
+Player player1;
+player1.playerInit(window.getSize().x, window.getSize().y, xtlc, ytlc, xbrc, ybrc, PlayerSpeed);
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 
     // Begins the Developer Qonsole
     // qonsoleBegin(); // Read further down for more info on why this is commented
@@ -135,7 +151,20 @@ int main() {
         // camera();
 
         // Draw stuff on the screen
-        player(xtlc, ytlc, xbrc, ybrc, xPlayerSpeed, yPlayerSpeed);
+        player0.player(
+        sf::Keyboard::isKeyPressed(sf::Keyboard::W),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::A),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::S),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::D)
+        );
+
+        player1.player(
+        sf::Keyboard::isKeyPressed(sf::Keyboard::Up),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::Left),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::Down),
+        sf::Keyboard::isKeyPressed(sf::Keyboard::Right)
+        );
+        
         glEnd();
 
         glClearColor(red, green, blue, 1.0f);

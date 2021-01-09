@@ -53,6 +53,7 @@
 #include <iostream>
 #include "usrfiles/camera.h"
 #include "usrfiles/player.h"
+#include "informationType.h"
 
 
 // Variables
@@ -91,94 +92,25 @@ void missingBackground() {
         }
 }
 
-void playerInit(int WINDOW_WIDTH, int WINDOW_HEIGHT) {
+void loadTexture(std::string TEXTURE_LOCATION, int TEXTURE_ID) {
 
-    // Adjusts sizes and movement to the screen
-    // Ye know
-    // So it doesn't do that weird stretching thing
-    xbrc = xbrc / float(WINDOW_WIDTH) * 1000; ybrc = ybrc / float(WINDOW_HEIGHT) * 1000;
-    xtlc = xtlc / float(WINDOW_WIDTH) * 1000; ytlc = ytlc / float(WINDOW_HEIGHT) * 1000;
-    xPlayerSpeed = xPlayerSpeed / float(WINDOW_WIDTH) * 1000; yPlayerSpeed = yPlayerSpeed / float(WINDOW_HEIGHT) * 1000;
-
-    // std::cout << WINDOW_WIDTH << "\n" << WINDOW_HEIGHT << "\n"; // Commented out because it's only for debugging
-}
-
-/*
-void camera() {
-
-    // Keyboard input
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8)) {              // The base for upwards camera movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {          // If the camera Right key is ALSO pressed then move diagonally
-            yCameraPos = yCameraPos + 100;
-            xCameraPos = xCameraPos + 100;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {   // If the camera Left key is ALSO pressed then move diagonally
-            yCameraPos = yCameraPos + 100;
-            xCameraPos = xCameraPos - 100;
-        } else {                                                    // If only the camera Up key is pressed then just move up
-            yCameraPos = yCameraPos + 100;
-        }
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2)) {       // The base for downwards camera movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {          // If the camera Right key is ALSO pressed then move diagonally
-            yCameraPos = yCameraPos - 100;
-            xCameraPos = xCameraPos + 100;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {   // If the camera Left key is ALSO pressed then move diagonally
-            yCameraPos = yCameraPos - 100;
-            xCameraPos = xCameraPos - 100;
-        } else {                                                    // If only the camera Down key is pressed then just move down
-            yCameraPos = yCameraPos - 100;
-        }
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6)) {       // If only the camera Right key is pressed then just move right
-        xCameraPos = xCameraPos + 100;
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4)) {       // If only the camera Left key is pressed then just move left
-        xCameraPos = xCameraPos - 100;
-    }
-    glViewport(xCameraPos, yCameraPos, windowWidth, windowHeight);
-
-}
-*/
-
-void player(float X_CORNERTL, float Y_CORNERTL, float X_CORNERBR, float Y_CORNERBR, float X_PLAYER_SPEED, float Y_PLAYER_SPEED) {
-
-    // Keyboard input
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {              // The base for upwards movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {          // If the Right key is ALSO pressed then move diagonally
-            xPlayerPos = xPlayerPos + X_PLAYER_SPEED / 20000;
-            yPlayerPos = yPlayerPos + Y_PLAYER_SPEED / 20000;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {   // If the Left key is ALSO pressed then move diagonally
-            xPlayerPos = xPlayerPos - X_PLAYER_SPEED / 20000;
-            yPlayerPos = yPlayerPos + Y_PLAYER_SPEED / 20000;
-        } else {                                                    // If only the Up key is pressed then just move up
-            yPlayerPos = yPlayerPos + Y_PLAYER_SPEED / 20000;
-        }
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {       // The base for downwards movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {          // If the Right key is ALSO pressed then move diagonally
-            xPlayerPos = xPlayerPos + X_PLAYER_SPEED / 20000;
-            yPlayerPos = yPlayerPos - Y_PLAYER_SPEED / 20000;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {   // If the Left key is ALSO pressed then move diagonally
-            xPlayerPos = xPlayerPos - X_PLAYER_SPEED / 20000;
-            yPlayerPos = yPlayerPos - Y_PLAYER_SPEED / 20000;
-        } else {                                                    // If only the Down key is pressed then just move down
-            yPlayerPos = yPlayerPos - Y_PLAYER_SPEED / 20000;
-        }
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {       // If only the Right key is pressed then just move right
-        xPlayerPos = xPlayerPos + X_PLAYER_SPEED / 20000;
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {       // If only the Left key is pressed then just move left
-        xPlayerPos = xPlayerPos - X_PLAYER_SPEED / 20000;
+    sf::Image img_data;
+    if (!img_data.loadFromFile(TEXTURE_LOCATION)) {
+        error("Failed to load %s");
     }
 
-    float x_corner_top_left = X_CORNERTL + xPlayerPos; float y_corner_top_left = Y_CORNERTL + yPlayerPos;
-    float x_corner_bottom_right = X_CORNERBR + xPlayerPos; float y_corner_bottom_right = Y_CORNERBR + yPlayerPos;
+    glEnable(GL_TEXTURE_2D);
 
-    // Triangle One
-    // ◤
-    glVertex2f(x_corner_top_left, y_corner_top_left); // Top Left Corner
-    glVertex2f(x_corner_top_left, y_corner_bottom_right); // Bottom Left Corner (Shared with Triangle Two)
-    glVertex2f(x_corner_bottom_right, y_corner_top_left); // Top Right Corner (Shared with Triangle Two)
+    GLuint texture_object;
+    glGenTextures(TEXTURE_ID, &texture_object);
 
-    // Triangle Two
-    // ◢
-    glVertex2f(x_corner_bottom_right, y_corner_bottom_right); // Bottom Right Corner
-    glVertex2f(x_corner_top_left, y_corner_bottom_right); // Bottom Left Corner (Shared with Triangle Two)
-    glVertex2f(x_corner_bottom_right, y_corner_top_left); // Top Right Corner (Shared with Triangle Two)
+    glBindTexture(GL_TEXTURE_2D, texture_object);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img_data.getSize().x, img_data.getSize().y, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data.getPixelsPtr());
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
 }
