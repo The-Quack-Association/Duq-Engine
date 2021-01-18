@@ -46,14 +46,16 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
-// Include OpenGL libraries
+// Include Graphical libraries
 #include <GL/glew.h>
+#include <stb/stb_image.h>
+#include <SOIL/SOIL.h>
 
 // Include other libraries
 #include <iostream>
 #include "usrfiles/camera.h"
 #include "usrfiles/player.h"
-#include "informationType.h"
+
 
 
 // Variables
@@ -92,6 +94,7 @@ void missingBackground() {
         }
 }
 
+/*
 void loadTexture(std::string TEXTURE_LOCATION, int TEXTURE_ID) {
 
     sf::Image img_data;
@@ -114,3 +117,4 @@ void loadTexture(std::string TEXTURE_LOCATION, int TEXTURE_ID) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
 }
+*/

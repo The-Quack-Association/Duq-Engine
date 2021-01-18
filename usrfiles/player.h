@@ -1,3 +1,5 @@
+#pragma once
+#include "../informationType.h"
 // Player 1 (player0)
 float
 // Configure the player's beginning size and position
@@ -7,7 +9,7 @@ xbrc = 0.25f,              // Bottom Right Corner x Coordinate
 ybrc = -0.35f,            // Bottom Right Corner x Coordinate
 xPlayerPos = 0.0f,       // x Player Position
 yPlayerPos = 0.0f,      // y Player Position
-PlayerSpeed = 1.0f;    // Player speed
+PlayerSpeed = 1.0f;    // Player speed'
 
 float textCoords[] = {};
 
@@ -18,7 +20,7 @@ float textCoords[] = {};
 class Player {
 
     public:
-
+    
         float
         x_tlc,
         y_tlc,
@@ -28,6 +30,8 @@ class Player {
         y_player_pos,
         x_player_speed,
         y_player_speed;
+
+        int port;
 
         void playerInit(int WINDOW_WIDTH, int WINDOW_HEIGHT, float XTLC, float YTLC, float XBRC, float YBRC, int PLAYER_SPEED) {
 
@@ -44,6 +48,12 @@ class Player {
         }
 
         void player(bool up, bool left, bool down, bool right) {
+
+            static bool initialized = false;
+            if (!initialized) {
+                std::cout << "Put a thing here but only run it once\n";
+                initialized = true;
+            }
 
             // Keyboard input
             if (up) {                                                   // The base for upwards movement
@@ -71,6 +81,40 @@ class Player {
             } else if (left) {                                          // If only the Left key is pressed then just move left
                 x_player_pos = x_player_pos - x_player_speed / 20000;
             }
+
+            float x_corner_top_left = x_tlc + x_player_pos; float y_corner_top_left = y_tlc + y_player_pos;
+            float x_corner_bottom_right = x_brc + x_player_pos; float y_corner_bottom_right = y_brc + y_player_pos;
+
+            
+
+            // Triangle One
+            // ◤
+            glVertex2f(x_corner_top_left, y_corner_top_left); // Top Left Corner
+            glVertex2f(x_corner_top_left, y_corner_bottom_right); // Bottom Left Corner (Shared with Triangle Two)
+            glVertex2f(x_corner_bottom_right, y_corner_top_left); // Top Right Corner (Shared with Triangle Two)
+
+            // Triangle Two
+            // ◢
+            glVertex2f(x_corner_bottom_right, y_corner_bottom_right); // Bottom Right Corner
+            glVertex2f(x_corner_top_left, y_corner_bottom_right); // Bottom Left Corner (Shared with Triangle Two)
+            glVertex2f(x_corner_bottom_right, y_corner_top_left); // Top Right Corner (Shared with Triangle Two)
+
+        }
+
+        void netPlayerInit(int PORT) {
+
+            port = 53000;
+
+            sf::TcpSocket socket;
+            sf::Socket::Status status = socket.connect("197.0.0.1", port);
+            if (status != sf::Socket::Done)
+            {
+                error("Failed to connect to socket");
+            }
+
+        }
+
+        void netPlayer() {
 
             float x_corner_top_left = x_tlc + x_player_pos; float y_corner_top_left = y_tlc + y_player_pos;
             float x_corner_bottom_right = x_brc + x_player_pos; float y_corner_bottom_right = y_brc + y_player_pos;
