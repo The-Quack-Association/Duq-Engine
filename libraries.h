@@ -13,9 +13,13 @@
 // Imports graphical libraries
 #include <GL/glew.h>
 
+// Imports physics libraries
+#include <box2d/box2d.h>
+
 // Imports custom libraries
 #include "informationType.h"
 #include "params/window.h"
+#include "vector.h"
 #include "staticShapes2D.h"
 #include "materials.h"
 #include "sprites2D.h"

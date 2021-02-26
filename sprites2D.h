@@ -4,7 +4,7 @@ class Player2D {
 
 public:
 
-    float posX, posY, width, height, speed;
+    float posX, posY, width, height, speedX, speedY;
 
     //////////////////////////////
     //// Set Player Variables ////
@@ -17,7 +17,8 @@ public:
         posY   = START_POS_Y  / WINDOW_HEIGHT * 100;
         width  = START_WIDTH  / WINDOW_WIDTH  * 100;
         height = START_HEIGHT / WINDOW_HEIGHT * 100;
-        speed = PLAYER_SPEED / 5000.0f;
+        speedX = PLAYER_SPEED / WINDOW_WIDTH  / 10;
+        speedY = PLAYER_SPEED / WINDOW_HEIGHT / 10;
 
     }
 
@@ -31,17 +32,17 @@ public:
 
             if (LEFT) {
 
-                posX = posX - speed;
-                posY = posY + speed;
+                posX = posX - speedX;
+                posY = posY + speedY;
 
             } else if (RIGHT) {
 
-                posX = posX + speed;
-                posY = posY + speed;
+                posX = posX + speedX;
+                posY = posY + speedY;
 
             } else {
 
-                posY = posY + speed;
+                posY = posY + speedY;
 
             }
 
@@ -49,28 +50,28 @@ public:
 
             if (LEFT) {
 
-                posX = posX - speed;
-                posY = posY - speed;
+                posX = posX - speedX;
+                posY = posY - speedY;
 
             } else if (RIGHT) {
 
-                posX = posX + speed;
-                posY = posY - speed;
+                posX = posX + speedX;
+                posY = posY - speedY;
 
             } else {
 
-                posY = posY - speed;
+                posY = posY - speedY;
 
             }
 
 
         } else if (LEFT) {
 
-            posX = posX - speed;
+            posX = posX - speedX;
 
         } else if (RIGHT) {
 
-            posX = posX + speed;
+            posX = posX + speedX;
 
         }
 

@@ -3,5 +3,5 @@
 ////////////////////////////////////////////////////////////////////////////////////
 #include "../libraries.h"
 std::string windowTitle = "Duq Engine";
-int windowWidth = 720;
+int windowWidth = 1280;
 int windowHeight = 720;
