@@ -1,18 +1,19 @@
 #include "libraries.h"
 
-void drawSquare2D(float posX, float posY, float size) {
-    glBegin(GL_TRIANGLES);
-    
-    // Triangle One
-    // ◥
-    glVertex2f(-size / 2 + posX,  size / 2 + posY); // Top Left Corner
-    glVertex2f(-size / 2 + posX, -size / 2 + posY); // Bottom Left Corner (Shared with Triangle Two)
-    glVertex2f( size / 2 + posX,  size / 2 + posY); // Top Right Corner (Shared with Triangle Two)
-    // Triangle Two
-    // ◣
-    glVertex2f( size / 2 + posX, -size / 2 + posY); // Bottom Right Corner
-    glVertex2f(-size / 2 + posX, -size / 2 + posY); // Bottom Left Corner (Shared with Triangle Two)
-    glVertex2f( size / 2 + posX,  size / 2 + posY); // Top Right Corner (Shared with Triangle Two)
+void drawSquare2D(float POS_X, float POS_Y, float SIZE ) {
+
+    float posX   = coordX(POS_X * 100);
+    float posY   = coordY(POS_Y * 100);
+    float width  = coordX(SIZE  * 100);
+    float height = coordY(SIZE  * 100);
+
+    glBegin(GL_QUADS);
+
+    glTexCoord2f(0.0f, 0.0f); glVertex2f(-width / 2.0f + posX, -height / 2.0f + posY); // ◣ Corner
+    glTexCoord2f(1.0f, 0.0f); glVertex2f( width / 2.0f + posX, -height / 2.0f + posY); // ◢ Corner
+    glTexCoord2f(1.0f, 1.0f); glVertex2f( width / 2.0f + posX,  height / 2.0f + posY); // ◥ Corner
+    glTexCoord2f(0.0f, 1.0f); glVertex2f(-width / 2.0f + posX,  height / 2.0f + posY); // ◤ Corner
     
     glEnd();
+
 }

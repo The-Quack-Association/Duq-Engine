@@ -2,6 +2,7 @@
 
 // Imports standard libraries
 #include <iostream>
+#include <string>
 
 // Imports the SFML libraries
 #include <SFML/Graphics.hpp>
@@ -19,6 +20,7 @@
 // Imports custom libraries
 #include "informationType.h"
 #include "params/window.h"
+#include "time.h"
 #include "vector.h"
 #include "staticShapes2D.h"
 #include "materials.h"

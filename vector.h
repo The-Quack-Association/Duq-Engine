@@ -2,7 +2,7 @@ float coordX(float X) {
 
     float x;
 
-    x = X / windowWidth * 100;
+    x = X / windowWidth;
 
     return x;
 
@@ -12,7 +12,7 @@ float coordY(float Y) {
 
     float y;
 
-    y = Y / windowHeight * 100;
+    y = Y / windowHeight;
 
     return y;
 

@@ -13,12 +13,12 @@ public:
     void playerInit(float START_POS_X, float START_POS_Y, float START_WIDTH, float START_HEIGHT, float PLAYER_SPEED,
     int WINDOW_WIDTH, int WINDOW_HEIGHT) {
 
-        posX   = START_POS_X  / WINDOW_WIDTH  * 100;
-        posY   = START_POS_Y  / WINDOW_HEIGHT * 100;
-        width  = START_WIDTH  / WINDOW_WIDTH  * 100;
-        height = START_HEIGHT / WINDOW_HEIGHT * 100;
-        speedX = PLAYER_SPEED / WINDOW_WIDTH  / 10;
-        speedY = PLAYER_SPEED / WINDOW_HEIGHT / 10;
+        posX   = coordX(START_POS_X  * 100);
+        posY   = coordY(START_POS_Y  * 100);
+        width  = coordX(START_WIDTH  * 100);
+        height = coordY(START_HEIGHT * 100);
+        speedX = coordX(PLAYER_SPEED * 500);
+        speedY = coordY(PLAYER_SPEED * 500);
 
     }
 
@@ -26,23 +26,25 @@ public:
     ////// Input for Player //////
     //////////////////////////////
 
-    void playerMove(bool UP, bool DOWN, bool LEFT, bool RIGHT) {
+    void playerMove(bool UP, bool DOWN, bool LEFT, bool RIGHT, float DELTA_TIME) {
+
+        std::cout << posX << "\n";
 
         if (UP) {
 
             if (LEFT) {
 
-                posX = posX - speedX;
-                posY = posY + speedY;
+                posX = posX - speedX * DELTA_TIME;
+                posY = posY + speedY * DELTA_TIME;
 
             } else if (RIGHT) {
 
-                posX = posX + speedX;
-                posY = posY + speedY;
+                posX = posX + speedX * DELTA_TIME;
+                posY = posY + speedY * DELTA_TIME;
 
             } else {
 
-                posY = posY + speedY;
+                posY = posY + speedY * DELTA_TIME;
 
             }
 
@@ -50,28 +52,28 @@ public:
 
             if (LEFT) {
 
-                posX = posX - speedX;
-                posY = posY - speedY;
+                posX = posX - speedX * DELTA_TIME;
+                posY = posY - speedY * DELTA_TIME;
 
             } else if (RIGHT) {
 
-                posX = posX + speedX;
-                posY = posY - speedY;
+                posX = posX + speedX * DELTA_TIME;
+                posY = posY - speedY * DELTA_TIME;
 
             } else {
 
-                posY = posY - speedY;
+                posY = posY - speedY * DELTA_TIME;
 
             }
 
 
         } else if (LEFT) {
 
-            posX = posX - speedX;
+            posX = posX - speedX * DELTA_TIME;
 
         } else if (RIGHT) {
 
-            posX = posX + speedX;
+            posX = posX + speedX * DELTA_TIME;
 
         }
 

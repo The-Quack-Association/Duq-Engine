@@ -41,6 +41,8 @@
 
 #include "libraries.h"
 
+
+
 int main(int argc, char** argv) {
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -52,12 +54,6 @@ int main(int argc, char** argv) {
     info("Command Line Arguments:");
     extra("Count", std::to_string(argc));
     extra("Arguments Passed", "");
-
-    for (int i = 0; i < argc; ++i) {
-
-        std::cout << WHITE << argv[i] << "\n";
-
-    }
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -113,6 +109,8 @@ int main(int argc, char** argv) {
     Player2D player0;
     player0.playerInit(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, window.getSize().x, window.getSize().y);
 
+    timeClock gameClock;
+
     info("Created Objects");
 
 
@@ -124,6 +122,9 @@ int main(int argc, char** argv) {
 
     b2Vec2 gravity(coordX(0), coordY(-10));
     b2World world(gravity);
+
+    b2BodyDef groundBodyDef;
+    groundBodyDef.position.Set(coordX(0.0f), coordY(-10.0f));
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -177,12 +178,16 @@ int main(int argc, char** argv) {
         /// Take Input and Update ///
         /////////////////////////////
 
+        gameClock.deltaTimeUpdate();
+
         player0.playerMove(
 
             sf::Keyboard::isKeyPressed(sf::Keyboard::W),
             sf::Keyboard::isKeyPressed(sf::Keyboard::S),
             sf::Keyboard::isKeyPressed(sf::Keyboard::A),
-            sf::Keyboard::isKeyPressed(sf::Keyboard::D)
+            sf::Keyboard::isKeyPressed(sf::Keyboard::D),
+
+            gameClock.dt
 
         );
 

@@ -74,7 +74,8 @@
         "slist": "cpp",
         "future": "cpp",
         "shared_mutex": "cpp",
-        "cfenv": "cpp"
+        "cfenv": "cpp",
+        "*.ipp": "cpp"
     },
     "cmake.configureOnOpen": true
 }
