@@ -28,8 +28,6 @@ public:
 
     void playerMove(bool UP, bool DOWN, bool LEFT, bool RIGHT, float DELTA_TIME) {
 
-        std::cout << posX << "\n";
-
         if (UP) {
 
             if (LEFT) {
@@ -102,18 +100,6 @@ public:
         glEnd();
 
         sf::Texture::bind(NULL);
-
-    }
-
-};
-
-class Ball {
-
-public:
-
-    void collision() {
-
-        
 
     }
 

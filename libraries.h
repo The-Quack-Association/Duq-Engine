@@ -20,9 +20,11 @@
 // Imports custom libraries
 #include "informationType.h"
 #include "params/window.h"
+#include "materials.h"
+#include "background.h"
+#include "text.h"
 #include "time.h"
 #include "vector.h"
 #include "staticShapes2D.h"
-#include "materials.h"
 #include "sprites2D.h"
 #include "map.h"

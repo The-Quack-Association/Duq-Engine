@@ -26,10 +26,4 @@ public:
 
     }
 
-    void setSolidColor() {
-
-
-
-    }
-
 };
