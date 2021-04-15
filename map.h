@@ -14,7 +14,7 @@ int mapLayout[] =
 1,1,1,1,1,1,1,1,1
 };
 
-void drawMap2D(Material TILE_TEXTURES) {
+void drawMap2D(Material &TILE_TEXTURES, Player2D &PLAYER) {
 
     int
     countX, countY,
@@ -51,6 +51,8 @@ void drawMap2D(Material TILE_TEXTURES) {
             if (mapLayout[countY * mapX + countX] == 1) {
 
                 glColor3f(1.0f, 0.5f, 0.3f);
+                if (countX == 1 && countX == 1)
+                    collideSquare2D(countX - centerOffsetX, countY - centerOffsetY, 1.0f, PLAYER);
 
             } else if (mapLayout[countY * mapX + countX] == 0) {
 

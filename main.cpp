@@ -109,8 +109,8 @@ int main(int argc, char** argv) {
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    Player2D player0;
-    player0.playerInit(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, window.getSize().x, window.getSize().y);
+    Player2D player[1];
+    player[0].playerInit(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, window.getSize().x, window.getSize().y);
 
     timeClock gameClock;
 
@@ -136,13 +136,13 @@ int main(int argc, char** argv) {
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    Material brickTex;
+    Material texture[3];
 
-    Material playerTex0;
+    texture[0].setTexture("./images/brick.png");
 
-    brickTex.setTexture("./images/brick.png");
+    texture[1].setTexture("./images/player.png");
 
-    playerTex0.setTexture("./images/player.png");
+    texture[2].setTexture("./images/missing.png");
 
     info("Created Material Objects");
 
@@ -188,7 +188,7 @@ int main(int argc, char** argv) {
 
         gameClock.deltaTimeUpdate();
 
-        player0.playerMove(
+        player[0].playerMove(
 
             sf::Keyboard::isKeyPressed(sf::Keyboard::W),
             sf::Keyboard::isKeyPressed(sf::Keyboard::S),
@@ -199,18 +199,19 @@ int main(int argc, char** argv) {
 
         );
 
+        collideSquare2D(2.0f, 0.0f, 1.0f, player[0]);
+
         /////////////////////////////
         ///////// Draw Map //////////
         /////////////////////////////
-
-        drawMap2D(brickTex);
 
 
         /////////////////////////////
         ////// Draw stuff here //////
         /////////////////////////////
 
-        player0.playerDraw(playerTex0);
+        player[0].playerDraw(texture[1]);
+        drawSquare2D(2.0f, 0.0f, 1.0f, texture[0]);
 
 
         //////////////////////////////

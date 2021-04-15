@@ -25,6 +25,6 @@
 #include "text.h"
 #include "time.h"
 #include "vector.h"
-#include "staticShapes2D.h"
 #include "sprites2D.h"
+#include "staticShapes2D.h"
 #include "map.h"

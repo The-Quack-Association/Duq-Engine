@@ -1,6 +1,6 @@
 #include "libraries.h"
 
-void drawSquare2D(float POS_X, float POS_Y, float SIZE, Material SHAPE_TEXTURE) {
+void drawSquare2D(float POS_X, float POS_Y, float SIZE, Material &SHAPE_TEXTURE) {
 
     float posX   = coordX(POS_X * 100);
     float posY   = coordY(POS_Y * 100);
@@ -23,5 +23,41 @@ void drawSquare2D(float POS_X, float POS_Y, float SIZE, Material SHAPE_TEXTURE) 
     glEnd();
 
     sf::Texture::bind(NULL);
+
+}
+
+void collideSquare2D(float POS_X, float POS_Y, float SIZE, Player2D &PLAYER) {
+
+    float posX   = coordX(POS_X * 100);
+    float posY   = coordY(POS_Y * 100);
+    float width  = coordX(SIZE  * 100);
+    float height = coordY(SIZE  * 100);
+
+    /* top returns the top y
+       bottom returns the bottom y
+       left returns the left x
+       right returns the right x*/ 
+    float top, bottom, left, right;
+
+    // Do the math to calculate the positions of each side
+    top     =  height / 2.0f + posY;
+    bottom  = -height / 2.0f + posY;
+    left    = -width  / 2.0f + posX;
+    right   =  width  / 2.0f + posX;
+
+    if ((PLAYER.top > bottom) && (PLAYER.bottom < top) && (PLAYER.left < right) && (PLAYER.right > left)) {
+
+        if (PLAYER.top > bottom) {
+
+            PLAYER.canMoveUp = false;
+
+        }
+        
+
+    } else {
+        
+        PLAYER.canMoveUp = true;
+                
+    }
 
 }

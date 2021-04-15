@@ -5,6 +5,13 @@ class Player2D {
 public:
 
     float posX, posY, width, height, speedX, speedY;
+    bool canMoveUp, canMoveDown, canMoveLeft, canMoveRight;
+
+    /* top returns the top y
+    bottom returns the bottom y
+    left returns the left x
+    right returns the right x*/ 
+    float top, bottom, left, right;
 
     //////////////////////////////
     //// Set Player Variables ////
@@ -19,6 +26,10 @@ public:
         height = coordY(START_HEIGHT * 100);
         speedX = coordX(PLAYER_SPEED * 500);
         speedY = coordY(PLAYER_SPEED * 500);
+        canMoveUp    = true;
+        canMoveDown  = true;
+        canMoveLeft  = true;
+        canMoveRight = true;
 
     }
 
@@ -28,14 +39,14 @@ public:
 
     void playerMove(bool UP, bool DOWN, bool LEFT, bool RIGHT, float DELTA_TIME) {
 
-        if (UP) {
+        if (UP && canMoveUp) {
 
-            if (LEFT) {
+            if (LEFT && canMoveLeft) {
 
                 posX = posX - speedX * DELTA_TIME;
                 posY = posY + speedY * DELTA_TIME;
 
-            } else if (RIGHT) {
+            } else if (RIGHT && canMoveRight) {
 
                 posX = posX + speedX * DELTA_TIME;
                 posY = posY + speedY * DELTA_TIME;
@@ -46,14 +57,14 @@ public:
 
             }
 
-        } else if (DOWN) {
+        } else if (DOWN && canMoveDown) {
 
-            if (LEFT) {
+            if (LEFT && canMoveLeft) {
 
                 posX = posX - speedX * DELTA_TIME;
                 posY = posY - speedY * DELTA_TIME;
 
-            } else if (RIGHT) {
+            } else if (RIGHT && canMoveRight) {
 
                 posX = posX + speedX * DELTA_TIME;
                 posY = posY - speedY * DELTA_TIME;
@@ -65,15 +76,21 @@ public:
             }
 
 
-        } else if (LEFT) {
+        } else if (LEFT && canMoveLeft) {
 
             posX = posX - speedX * DELTA_TIME;
 
-        } else if (RIGHT) {
+        } else if (RIGHT && canMoveRight) {
 
             posX = posX + speedX * DELTA_TIME;
 
         }
+
+        // Do the math to calculate the positions of each side
+        top     =  height / 2.0f + posY;
+        bottom  = -height / 2.0f + posY;
+        left    = -width  / 2.0f + posX;
+        right   =  width  / 2.0f + posX;
 
     }
 
@@ -81,7 +98,7 @@ public:
     ////// Draw the Player ///////
     //////////////////////////////
 
-    void playerDraw(Material PLAYER_TEXTURE) {
+    void playerDraw(Material &PLAYER_TEXTURE) {
 
         glEnable(GL_TEXTURE_2D);
         glEnable(GL_BLEND);
