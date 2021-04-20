@@ -45,19 +45,34 @@ void collideSquare2D(float POS_X, float POS_Y, float SIZE, Player2D &PLAYER) {
     left    = -width  / 2.0f + posX;
     right   =  width  / 2.0f + posX;
 
-    if ((PLAYER.top > bottom) && (PLAYER.bottom < top) && (PLAYER.left < right) && (PLAYER.right > left)) {
+    // Perform collision detection
+    if (PLAYER.top > bottom && PLAYER.bottom < top && PLAYER.left < right && PLAYER.right > left) {
 
-        if (PLAYER.top > bottom) {
+        if (PLAYER.posX > posX) {
 
-            PLAYER.canMoveUp = false;
+            PLAYER.canMoveLeft  = false;
+
+        } else if (PLAYER.posX < posX) {
+
+            PLAYER.canMoveRight = false;
+
+        } else if (PLAYER.posY < posY) {
+
+            PLAYER.canMoveUp    = false;
+
+        } else if (PLAYER.posY > posY) {
+
+            PLAYER.canMoveDown  = false;
 
         }
-        
 
     } else {
-        
-        PLAYER.canMoveUp = true;
-                
+
+        PLAYER.canMoveLeft  = true;
+        PLAYER.canMoveRight = true;
+        PLAYER.canMoveUp    = true;
+        PLAYER.canMoveDown  = true;
+
     }
 
 }

@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
 ////////////////////////////////////////////////////////////////////////////////////
 
     Player2D player[1];
-    player[0].playerInit(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, window.getSize().x, window.getSize().y);
+    player[0].playerInit(0.0f, 0.0f, 1.0f, 0.75f, 1.0f, window.getSize().x, window.getSize().y);
 
     timeClock gameClock;
 
@@ -162,6 +162,15 @@ int main(int argc, char** argv) {
                 case sf::Event::Closed:
 
                     window.close();
+                    break;
+
+                case sf::Event::KeyPressed:
+                
+                    if (ev.key.code == sf::Keyboard::Escape) {
+
+                        window.close();
+
+                    }
                     break;
 
             }
