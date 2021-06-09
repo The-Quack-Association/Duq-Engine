@@ -33,11 +33,26 @@ void collideSquare2D(float POS_X, float POS_Y, float SIZE, Player2D &PLAYER) {
     float width  = coordX(SIZE  * 100);
     float height = coordY(SIZE  * 100);
 
-    /* top returns the top y
-       bottom returns the bottom y
-       left returns the left x
-       right returns the right x*/ 
+    /*
+    top returns the top y
+    bottom returns the bottom y
+    left returns the left x
+    right returns the right x
+    */ 
     float top, bottom, left, right;
+
+    /* Returns what side a sprite is on in relation to the object
+    0 = not on one specific side
+    1 = top
+    2 = bottom
+    3 = left
+    4 = right
+    5 = undefined (something horribly wrong has probably happened and you should hide in a bomb shelter immediately)
+    */
+    int sideOn;
+
+    // Speaks for itself
+    float isColliding;
 
     // Do the math to calculate the positions of each side
     top     =  height / 2.0f + posY;
@@ -46,33 +61,73 @@ void collideSquare2D(float POS_X, float POS_Y, float SIZE, Player2D &PLAYER) {
     right   =  width  / 2.0f + posX;
 
     // Perform collision detection
+    if (PLAYER.bottom > top && PLAYER.top > bottom && PLAYER.right < left && PLAYER.left < right) {
+
+        sideOn = 0; // if top left
+
+    } else if (PLAYER.bottom > top && PLAYER.top > bottom && PLAYER.left > right && PLAYER.right > left) {
+
+        sideOn = 0; // if top right
+
+    } else if (PLAYER.bottom < top && PLAYER.top < bottom && PLAYER.right < left && PLAYER.left < right) {
+
+        sideOn = 0; // if bottom right
+
+    } else if (PLAYER.bottom < top && PLAYER.top < bottom && PLAYER.left > right && PLAYER.right > left) {
+
+        sideOn = 0; // if bottom left
+
+    } else if (PLAYER.bottom > bottom && PLAYER.right > left && PLAYER.left < right) {
+
+        sideOn = 1; // if top
+
+    } else if (PLAYER.top < top && PLAYER.left < right && PLAYER.right > left) {
+
+        sideOn = 2; // if bottom
+
+    } else if (PLAYER.bottom < top && PLAYER.top > bottom && PLAYER.right < right) {
+
+        sideOn = 3; // if left
+
+    } else if (PLAYER.bottom < top && PLAYER.top > bottom && PLAYER.left > left) {
+
+        sideOn = 4; // if right
+
+    } else {
+
+        sideOn = 5;
+
+    }
+
     if (PLAYER.top > bottom && PLAYER.bottom < top && PLAYER.left < right && PLAYER.right > left) {
+    
+        if (sideOn == 1) {
 
-        if (PLAYER.posX > posX) {
+            PLAYER.canMoveDown = false;
 
-            PLAYER.canMoveLeft  = false;
+        } else if (sideOn == 2) {
 
-        } else if (PLAYER.posX < posX) {
+            PLAYER.canMoveUp = false;
+
+        } else if (sideOn == 3) {
 
             PLAYER.canMoveRight = false;
 
-        } else if (PLAYER.posY < posY) {
+        } else if (sideOn == 4) {
 
-            PLAYER.canMoveUp    = false;
-
-        } else if (PLAYER.posY > posY) {
-
-            PLAYER.canMoveDown  = false;
+            PLAYER.canMoveLeft = false;
 
         }
 
     } else {
 
-        PLAYER.canMoveLeft  = true;
+        PLAYER.canMoveUp = true;
+        PLAYER.canMoveDown = true;
+        PLAYER.canMoveLeft = true;
         PLAYER.canMoveRight = true;
-        PLAYER.canMoveUp    = true;
-        PLAYER.canMoveDown  = true;
 
     }
+
+    std::cout << sideOn << "\n";
 
 }

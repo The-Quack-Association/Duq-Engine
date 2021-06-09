@@ -7,10 +7,12 @@ public:
     float posX, posY, width, height, speedX, speedY;
     bool canMoveUp, canMoveDown, canMoveLeft, canMoveRight;
 
-    /* top returns the top y
+    /*
+    top returns the top y
     bottom returns the bottom y
     left returns the left x
-    right returns the right x*/ 
+    right returns the right x
+    */
     float top, bottom, left, right;
 
     //////////////////////////////
@@ -39,14 +41,14 @@ public:
 
     void playerMove(bool UP, bool DOWN, bool LEFT, bool RIGHT, float DELTA_TIME) {
 
-        if (UP && canMoveUp) {
+        if (UP && canMoveUp && !DOWN) {
 
-            if (LEFT && canMoveLeft) {
+            if (LEFT && canMoveLeft && !RIGHT) {
 
                 posX = posX - speedX * DELTA_TIME;
                 posY = posY + speedY * DELTA_TIME;
 
-            } else if (RIGHT && canMoveRight) {
+            } else if (RIGHT && canMoveRight && !LEFT) {
 
                 posX = posX + speedX * DELTA_TIME;
                 posY = posY + speedY * DELTA_TIME;
@@ -57,14 +59,14 @@ public:
 
             }
 
-        } else if (DOWN && canMoveDown) {
+        } else if (DOWN && canMoveDown && !UP) {
 
-            if (LEFT && canMoveLeft) {
+            if (LEFT && canMoveLeft && !RIGHT) {
 
                 posX = posX - speedX * DELTA_TIME;
                 posY = posY - speedY * DELTA_TIME;
 
-            } else if (RIGHT && canMoveRight) {
+            } else if (RIGHT && canMoveRight && !LEFT) {
 
                 posX = posX + speedX * DELTA_TIME;
                 posY = posY - speedY * DELTA_TIME;
@@ -76,11 +78,11 @@ public:
             }
 
 
-        } else if (LEFT && canMoveLeft) {
+        } else if (LEFT && canMoveLeft && !RIGHT) {
 
             posX = posX - speedX * DELTA_TIME;
 
-        } else if (RIGHT && canMoveRight) {
+        } else if (RIGHT && canMoveRight && !LEFT) {
 
             posX = posX + speedX * DELTA_TIME;
 
