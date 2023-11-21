@@ -1,44 +1,53 @@
 #include "../../libraries.h"
 
-class sprite {
+class Sprite {
 
 public:
 
-    float width, height, posX, posY, rotation;
-    struct vector2d model[4];
+    float posX, posY, rotation;
+    Model loadedModel;
 
-    void drawQuadrilateral(float WIDTH, float HEIGHT, float POS_X, float POS_Y, float ROTATION) {
+    void init(float POS_X, float POS_Y, float ROTATION) {
 
-        float posX   = POS_X  * 0.5;
-        float posY   = POS_Y  * 0.5;
-        float width  = WIDTH  * 0.5;
-        float height = HEIGHT * 0.5;
+        posX = POS_X / 10;
+        posY = POS_Y / 10;
+        rotation = ROTATION;
 
-        model[1] =
+    }
+
+    void loadModel(Model& MODEL) {
+
+        loadedModel = Model(MODEL);
+
+    }
+
+    void draw() {
+
+        loadedModel.verts[0] =
         {
-        .x = (-(width / 2.0f) * cos(degree2radian(ROTATION))) - ( (height / 2.0f) * sin(degree2radian(ROTATION))),
-        .y = (-(width / 2.0f) * sin(degree2radian(ROTATION))) + ( (height / 2.0f) * cos(degree2radian(ROTATION)))
+        .x = static_cast<float>((-0.25 * cos(degree2radian(rotation))) - ( 0.25 * sin(degree2radian(rotation)))),
+        .y = static_cast<float>((-0.25 * sin(degree2radian(rotation))) + ( 0.25 * cos(degree2radian(rotation))))
         };
-        model[2] =
+        loadedModel.verts[1] =
         {
-        .x = ( (width / 2.0f) * cos(degree2radian(ROTATION))) - ( (height / 2.0f) * sin(degree2radian(ROTATION))),
-        .y = ( (width / 2.0f) * sin(degree2radian(ROTATION))) + ( (height / 2.0f) * cos(degree2radian(ROTATION)))
+        .x = static_cast<float>(( 0.25 * cos(degree2radian(rotation))) - ( 0.25 * sin(degree2radian(rotation)))),
+        .y = static_cast<float>(( 0.25 * sin(degree2radian(rotation))) + ( 0.25 * cos(degree2radian(rotation))))
         };
-        model[3] =
+        loadedModel.verts[2] =
         {
-        .x = ( (width / 2.0f) * cos(degree2radian(ROTATION))) - (-(height / 2.0f) * sin(degree2radian(ROTATION))),
-        .y = ( (width / 2.0f) * sin(degree2radian(ROTATION))) + (-(height / 2.0f) * cos(degree2radian(ROTATION)))
+        .x = static_cast<float>(( 0.25 * cos(degree2radian(rotation))) - (-0.25 * sin(degree2radian(rotation)))),
+        .y = static_cast<float>(( 0.25 * sin(degree2radian(rotation))) + (-0.25 * cos(degree2radian(rotation))))
         };
-        model[4] =
+        loadedModel.verts[3] =
         {
-        .x = (-(width / 2.0f) * cos(degree2radian(ROTATION))) - (-(height / 2.0f) * sin(degree2radian(ROTATION))),
-        .y = (-(width / 2.0f) * sin(degree2radian(ROTATION))) + (-(height / 2.0f) * cos(degree2radian(ROTATION)))
+        .x = static_cast<float>((-0.25 * cos(degree2radian(rotation))) - (-0.25 * sin(degree2radian(rotation)))),
+        .y = static_cast<float>((-0.25 * sin(degree2radian(rotation))) + (-0.25 * cos(degree2radian(rotation))))
         };
 
         glBegin(GL_POLYGON);
-        for (int i = 1; i <= sizeof(model) / sizeof(model[0]); i++) {
+        for (int i = 0; i < loadedModel.vertCount; i++) {
 
-            glVertex2d(model[i].x, model[i].y);
+            glVertex2d(loadedModel.verts[i].x, loadedModel.verts[i].y);
 
         }
         glEnd();

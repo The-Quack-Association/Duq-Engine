@@ -2,9 +2,12 @@
 
 // Standard
 #include <iostream>
+#include <algorithm>
 #include <cstdio>
 #include <cmath>
+#include <list>
 #include <string>
+#include <fstream>
 
 // SFML
 #include <SFML/Graphics.hpp>
@@ -20,9 +23,11 @@
 #include <nlohmann/json.hpp>
 
 // Custom
-// #include "./components/cli/informationType.h" // Not working... will fix when CLI system is incorperated...
+//#include "./components/cli/informationType.h" // Not working... will fix when CLI is incorperated...
 #include "./components/function/math.h"
-#include "./components/function/converters.h"
+#include "./components/function/conversions.h"
+#include "./components/function/data.h"
+#include "./components/function/time.h"
 #include "./components/cli/informationType.h"
 #include "./components/render/window.h"
 #include "./components/render/sprites.h"
