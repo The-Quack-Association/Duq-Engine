@@ -1,0 +1,3 @@
+/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/Duq-Engine.dir
+/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/edit_cache.dir
+/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/rebuild_cache.dir
