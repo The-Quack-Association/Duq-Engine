@@ -1,5 +1,5 @@
 #include "../../libraries.h"
 
-int windowWidth  = 480;
-int windowHeight = 480;
-std::string windowTitle = "Duq Engine";
+const GLuint windowWidth  = 800;
+const GLuint windowHeight = 600;
+const char* windowTitle = "Duq-Engine";

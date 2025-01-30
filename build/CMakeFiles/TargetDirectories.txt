@@ -1,3 +1,12 @@
-/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/Duq-Engine.dir
-/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/edit_cache.dir
-/home/johnnya/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/rebuild_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/glad.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/Duq-Engine.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/edit_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/CMakeFiles/rebuild_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/CMakeFiles/edit_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/CMakeFiles/rebuild_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/src/CMakeFiles/glfw.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/src/CMakeFiles/update_mappings.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/src/CMakeFiles/edit_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glfw-3.4/src/CMakeFiles/rebuild_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glm/CMakeFiles/edit_cache.dir
+/home/johnny/Desktop/Programming/C++/Duq-Engine/build/include/glm/CMakeFiles/rebuild_cache.dir

@@ -41,7 +41,19 @@
 
 #include "libraries.h"
 
-int main(int argc, char* argv[]) {
+static void error_callback(int ERROR, const char *DESCRIPTION) {
+
+	std::cout << "Error: " << DESCRIPTION << "\n";
+
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int WIDTH, int HEIGHT) {
+
+    glViewport(0, 0, WIDTH, HEIGHT);
+
+}
+
+int main(int argc, char** argv) {
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +64,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
 
         info("Command Line Arguments:");
-        extra("Count", std::to_string(argc));
+        extra("Count", std::to_string(argc - 1));
         extra("Arguments Passed", "");
 
         for (int i = 1; i < argc; i++) {
@@ -65,16 +77,32 @@ int main(int argc, char* argv[]) {
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////Initialize GLAD//////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+    glfwSetErrorCallback(error_callback);
+
+	if (!glfwInit()) {
+
+		exit(EXIT_FAILURE);
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////Configure OpenGL//////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    sf::ContextSettings settings;
-    info("OpenGL Configured With These Settings:");
-    settings.majorVersion = 4;
-    settings.minorVersion = 6;
-    std::cout << BOLDMAGENTA << "Version:" << WHITE << settings.majorVersion << "." << settings.minorVersion << "\n";
-    settings.depthBits = 24;
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
+    #ifdef __APPLE__
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    #endif
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -82,44 +110,18 @@ int main(int argc, char* argv[]) {
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    sf::RenderWindow window                                 // Create the window
-    (sf::VideoMode(windowWidth, windowHeight), windowTitle, // Configure window info
-    sf::Style::Titlebar | sf::Style::Close, settings);      // Configure window settings
+    GLFWwindow *window = glfwCreateWindow(windowWidth, windowHeight, windowTitle, NULL, NULL);
+    if (!window) {
 
-    sf::Event ev; // Create the window event
-    info("Created Window With These Settings:");
-    extra("Title", windowTitle);
-    extra("Width", std::to_string(windowWidth));
-    extra("Height", std::to_string(windowHeight));
+        glfwTerminate();
+		exit(EXIT_FAILURE);
 
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////Initialize GLEW//////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-
-    glewExperimental = true; // Set GLEW to use experimental features
-
-    // Return a message informing whether or not GLEW was able to inititalize
-    if (glewInit() != GLEW_OK) {
-        error("GLEW Failed to Initialize");
-    } else if (glewInit() == GLEW_OK) {
-        info("GLEW Initialized Successfully");
     }
-    extra("GLEW Experimental", std::to_string(glewExperimental)); // Return a message informing if GLEW Experimental is true
+    glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////Create Objects///////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-
-Model h;
-h.loadFile("resources/models/square.swan");
-
-Sprite the;
-the.init(0.0f, 0.0f, 0.0f);
-the.loadModel(h);
+    int version = gladLoadGL(glfwGetProcAddress);
+    std::cout << BOLDMAGENTA << "Version: " << WHITE << GLAD_VERSION_MAJOR(version) << "." << GLAD_VERSION_MINOR(version) << "\n";
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -127,27 +129,17 @@ the.loadModel(h);
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-    while (window.isOpen()) {
+    Game engine(windowWidth, windowHeight);
+    double deltaTime = 0.0f;
+    double lastFrame = 0.0f;
 
-        while (window.pollEvent(ev)) {
+    while (!glfwWindowShouldClose(window)) {
 
-            switch (ev.type) {
+        glfwPollEvents();
 
-                case sf::Event::Closed:
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
 
-                    window.close();
-                    break;
-
-                case sf::Event::KeyPressed:
-                
-                    if (ev.key.code == sf::Keyboard::Escape) {
-
-                        window.close();
-
-                    }
-                    break;
-
-            }
+            glfwSetWindowShouldClose(window, GL_TRUE);
 
         }
 
@@ -158,21 +150,33 @@ the.loadModel(h);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         ////////////
-        // Render //
+        // Update //
         ////////////
 
-        the.draw();
+        // Deltatime
+        double currentFrame = glfwGetTime();
+        deltaTime = (currentFrame - lastFrame) * 100.0F;
+        lastFrame = currentFrame;
 
-        //////////////////////
-        // Draw onto window //
-        //////////////////////
+        engine.processInput(deltaTime);
+        engine.update(deltaTime);
+
+        //////////
+        // Draw //
+        //////////
+
+        engine.render();
+
+        ////////////////////////
+        // Render onto window //
+        ////////////////////////
 
         glClearColor(0.2f, 0.2f, 0.26f, 1.0f);
 
-        window.display();
+        glfwSwapBuffers(window);
 
     }
 
-    return 0;
+    glfwTerminate();
 
 }

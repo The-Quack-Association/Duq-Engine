@@ -1,7 +1,7 @@
 CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/main.cpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/libraries.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/libraries.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -170,132 +170,244 @@ CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/list /usr/include/c++/14.2.1/bits/stl_list.h \
  /usr/include/c++/14.2.1/bits/allocated_ptr.h \
  /usr/include/c++/14.2.1/ext/aligned_buffer.h \
- /usr/include/c++/14.2.1/bits/list.tcc /usr/include/c++/14.2.1/fstream \
+ /usr/include/c++/14.2.1/bits/list.tcc /usr/include/c++/14.2.1/sstream \
+ /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/fstream \
  /usr/include/c++/14.2.1/bits/codecvt.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/14.2.1/bits/fstream.tcc /usr/include/SFML/Graphics.hpp \
- /usr/include/SFML/Window.hpp /usr/include/SFML/System.hpp \
- /usr/include/SFML/Config.hpp /usr/include/SFML/System/Clock.hpp \
- /usr/include/SFML/System/Export.hpp /usr/include/SFML/System/Time.hpp \
- /usr/include/SFML/System/Err.hpp \
- /usr/include/SFML/System/FileInputStream.hpp \
- /usr/include/SFML/System/InputStream.hpp \
- /usr/include/SFML/System/NonCopyable.hpp \
- /usr/include/SFML/System/Lock.hpp \
- /usr/include/SFML/System/MemoryInputStream.hpp \
- /usr/include/SFML/System/Mutex.hpp /usr/include/SFML/System/Sleep.hpp \
- /usr/include/SFML/System/String.hpp /usr/include/SFML/System/Utf.hpp \
- /usr/include/c++/14.2.1/locale \
- /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
- /usr/include/c++/14.2.1/ctime \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
- /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
- /usr/include/libintl.h \
- /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
- /usr/include/c++/14.2.1/bits/locale_conv.h \
- /usr/include/SFML/System/Utf.inl /usr/include/c++/14.2.1/iterator \
- /usr/include/c++/14.2.1/bits/stream_iterator.h \
- /usr/include/SFML/System/String.inl /usr/include/SFML/System/Thread.hpp \
- /usr/include/SFML/System/Thread.inl \
- /usr/include/SFML/System/ThreadLocal.hpp \
- /usr/include/SFML/System/ThreadLocalPtr.hpp \
- /usr/include/SFML/System/ThreadLocalPtr.inl \
- /usr/include/SFML/System/Vector2.hpp \
- /usr/include/SFML/System/Vector2.inl \
- /usr/include/SFML/System/Vector3.hpp \
- /usr/include/SFML/System/Vector3.inl \
- /usr/include/SFML/Window/Clipboard.hpp \
- /usr/include/SFML/Window/Export.hpp /usr/include/SFML/Window/Context.hpp \
- /usr/include/SFML/Window/GlResource.hpp \
- /usr/include/SFML/Window/ContextSettings.hpp \
- /usr/include/SFML/Window/Cursor.hpp /usr/include/SFML/Window/Event.hpp \
- /usr/include/SFML/Window/Joystick.hpp \
- /usr/include/SFML/Window/Keyboard.hpp /usr/include/SFML/Window/Mouse.hpp \
- /usr/include/SFML/Window/Sensor.hpp /usr/include/SFML/Window/Touch.hpp \
- /usr/include/SFML/Window/VideoMode.hpp /usr/include/c++/14.2.1/vector \
- /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/14.2.1/bits/stl_vector.h \
- /usr/include/c++/14.2.1/bits/stl_bvector.h \
- /usr/include/c++/14.2.1/bits/vector.tcc \
- /usr/include/SFML/Window/Window.hpp \
- /usr/include/SFML/Window/WindowBase.hpp \
- /usr/include/SFML/Window/Vulkan.hpp \
- /usr/include/SFML/Window/WindowHandle.hpp \
+ /usr/include/c++/14.2.1/bits/fstream.tcc \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/stb/stb_image.h \
+ /usr/include/c++/14.2.1/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/c++/14.2.1/math.h \
+ /usr/include/assert.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /usr/include/SFML/Window/WindowStyle.hpp \
- /usr/include/SFML/Graphics/BlendMode.hpp \
- /usr/include/SFML/Graphics/Export.hpp \
- /usr/include/SFML/Graphics/CircleShape.hpp \
- /usr/include/SFML/Graphics/Shape.hpp \
- /usr/include/SFML/Graphics/Drawable.hpp \
- /usr/include/SFML/Graphics/RenderStates.hpp \
- /usr/include/SFML/Graphics/Transform.hpp \
- /usr/include/SFML/Graphics/Rect.hpp /usr/include/SFML/Graphics/Rect.inl \
- /usr/include/SFML/Graphics/Transformable.hpp \
- /usr/include/SFML/Graphics/VertexArray.hpp \
- /usr/include/SFML/Graphics/Vertex.hpp \
- /usr/include/SFML/Graphics/Color.hpp \
- /usr/include/SFML/Graphics/PrimitiveType.hpp \
- /usr/include/SFML/Graphics/ConvexShape.hpp \
- /usr/include/SFML/Graphics/Font.hpp /usr/include/SFML/Graphics/Glyph.hpp \
- /usr/include/SFML/Graphics/Texture.hpp \
- /usr/include/SFML/Graphics/Image.hpp /usr/include/c++/14.2.1/map \
- /usr/include/c++/14.2.1/bits/stl_tree.h \
- /usr/include/c++/14.2.1/bits/node_handle.h \
- /usr/include/c++/14.2.1/bits/stl_map.h \
- /usr/include/c++/14.2.1/bits/stl_multimap.h \
- /usr/include/c++/14.2.1/bits/erase_if.h \
- /usr/include/SFML/Graphics/RectangleShape.hpp \
- /usr/include/SFML/Graphics/RenderTarget.hpp \
- /usr/include/SFML/Graphics/View.hpp \
- /usr/include/SFML/Graphics/RenderTexture.hpp \
- /usr/include/SFML/Graphics/RenderWindow.hpp \
- /usr/include/SFML/Graphics/Shader.hpp \
- /usr/include/SFML/Graphics/Glsl.hpp /usr/include/SFML/Graphics/Glsl.inl \
- /usr/include/SFML/Graphics/Sprite.hpp \
- /usr/include/SFML/Graphics/Text.hpp \
- /usr/include/SFML/Graphics/VertexBuffer.hpp /usr/include/SFML/Audio.hpp \
- /usr/include/SFML/Audio/InputSoundFile.hpp \
- /usr/include/SFML/Audio/Export.hpp /usr/include/SFML/Audio/Listener.hpp \
- /usr/include/SFML/Audio/Music.hpp \
- /usr/include/SFML/Audio/SoundStream.hpp \
- /usr/include/SFML/Audio/SoundSource.hpp \
- /usr/include/SFML/Audio/AlResource.hpp \
- /usr/include/SFML/Audio/OutputSoundFile.hpp \
- /usr/include/SFML/Audio/Sound.hpp \
- /usr/include/SFML/Audio/SoundBuffer.hpp /usr/include/c++/14.2.1/set \
- /usr/include/c++/14.2.1/bits/stl_set.h \
- /usr/include/c++/14.2.1/bits/stl_multiset.h \
- /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
- /usr/include/SFML/Audio/SoundRecorder.hpp \
- /usr/include/SFML/Audio/SoundFileFactory.hpp \
- /usr/include/SFML/Audio/SoundFileFactory.inl \
- /usr/include/SFML/Audio/SoundFileReader.hpp \
- /usr/include/SFML/Audio/SoundFileWriter.hpp \
- /usr/include/SFML/Network.hpp /usr/include/SFML/Network/Ftp.hpp \
- /usr/include/SFML/Network/Export.hpp \
- /usr/include/SFML/Network/TcpSocket.hpp \
- /usr/include/SFML/Network/Socket.hpp \
- /usr/include/SFML/Network/SocketHandle.hpp \
- /usr/include/SFML/Network/Http.hpp \
- /usr/include/SFML/Network/IpAddress.hpp \
- /usr/include/SFML/Network/Packet.hpp \
- /usr/include/SFML/Network/SocketSelector.hpp \
- /usr/include/SFML/Network/TcpListener.hpp \
- /usr/include/SFML/Network/UdpSocket.hpp /usr/include/GL/glew.h \
- /usr/include/c++/14.2.1/cstdint /usr/include/GL/glu.h \
- /usr/include/GL/gl.h /usr/include/nlohmann/json.hpp \
- /usr/include/c++/14.2.1/functional \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/mm_malloc.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glfw-3.4/include/GLFW/glfw3.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glad/include/glad/gl.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glad/include/KHR/khrplatform.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/glm.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/_fixes.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/setup.hpp \
+ /usr/include/c++/14.2.1/cassert \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/../simd/platform.h \
+ /usr/include/c++/14.2.1/cstdint /usr/include/c++/14.2.1/climits \
+ /usr/include/c++/14.2.1/cfloat \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/float.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/fwd.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/qualifier.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/vec2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec2.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/./compute_vector_relational.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/./setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int2_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../ext/scalar_int_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../ext/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint2_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../ext/scalar_uint_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/vec3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec3.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int3_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint3_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/vec4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_vec4.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_bool4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_float4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_double4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_int4_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/vector_uint4_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/mat2x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/matrix_double2x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_mat2x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/type_mat2x2.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../matrix.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat2x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double2x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat2x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat2x3.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double2x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float2x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float2x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat2x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double2x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat2x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat2x4.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double2x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float2x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float2x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat3x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x2.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat3x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x3.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat3x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat3x4.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double3x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float3x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat4x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x2.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat4x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x3.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x3.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x3_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../mat4x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/../detail/type_mat4x4.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_double4x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x4.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/.././ext/matrix_float4x4_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/func_matrix.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../geometric.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/func_geometric.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../exponential.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/type_vec1.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/func_exponential.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/../vector_relational.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/../detail/func_vector_relational.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/_vectorize.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../common.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/_fixes.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/func_common.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/compute_common.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/../detail/../detail/../detail/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/matrix_double2x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/matrix_float2x2.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/./ext/matrix_float2x2_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/trigonometric.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/func_trigonometric.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/packing.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/func_packing.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/type_half.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/type_half.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/integer.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/detail/func_integer.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/matrix_transform.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_projection.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/../gtc/constants.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/../gtc/../ext/scalar_constants.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/../gtc/../ext/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/../gtc/../ext/scalar_constants.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/../gtc/constants.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_projection.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_clip_space.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_clip_space.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_transform.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../ext/matrix_transform.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/matrix_transform.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/type_ptr.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/quaternion.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_relational.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_relational.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/type_float.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_common.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_common.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_float.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/type_quat.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/../detail/type_quat.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_double.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_transform.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/quaternion_transform.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/quaternion.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/epsilon.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../detail/setup.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/epsilon.inl \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/vec1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_bool1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_float1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_float1_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_double1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_double1_precision.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_int1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_int1_sized.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_uint1.hpp \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp \
+ /usr/include/c++/14.2.1/cstring \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/include/glm/gtc/type_ptr.inl \
+ /usr/include/nlohmann/json.hpp /usr/include/c++/14.2.1/functional \
  /usr/include/c++/14.2.1/bits/std_function.h \
  /usr/include/c++/14.2.1/unordered_map \
  /usr/include/c++/14.2.1/bits/unordered_map.h \
  /usr/include/c++/14.2.1/bits/hashtable.h \
  /usr/include/c++/14.2.1/bits/hashtable_policy.h \
  /usr/include/c++/14.2.1/bits/enable_special_members.h \
- /usr/include/c++/14.2.1/array /usr/include/c++/14.2.1/compare \
+ /usr/include/c++/14.2.1/bits/node_handle.h \
+ /usr/include/c++/14.2.1/bits/erase_if.h /usr/include/c++/14.2.1/vector \
+ /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/14.2.1/bits/stl_vector.h \
+ /usr/include/c++/14.2.1/bits/stl_bvector.h \
+ /usr/include/c++/14.2.1/bits/vector.tcc /usr/include/c++/14.2.1/array \
+ /usr/include/c++/14.2.1/compare /usr/include/c++/14.2.1/iterator \
+ /usr/include/c++/14.2.1/bits/stream_iterator.h \
  /usr/include/c++/14.2.1/memory \
  /usr/include/c++/14.2.1/bits/stl_raw_storage_iter.h \
  /usr/include/c++/14.2.1/bits/align.h \
@@ -316,6 +428,9 @@ CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/forward_list \
  /usr/include/c++/14.2.1/bits/forward_list.h \
  /usr/include/c++/14.2.1/bits/forward_list.tcc \
+ /usr/include/c++/14.2.1/map /usr/include/c++/14.2.1/bits/stl_tree.h \
+ /usr/include/c++/14.2.1/bits/stl_map.h \
+ /usr/include/c++/14.2.1/bits/stl_multimap.h \
  /usr/include/c++/14.2.1/valarray \
  /usr/include/c++/14.2.1/bits/valarray_array.h \
  /usr/include/c++/14.2.1/bits/valarray_array.tcc \
@@ -332,8 +447,8 @@ CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
  /usr/include/nlohmann/detail/meta/detected.hpp \
  /usr/include/nlohmann/detail/meta/void_t.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley.hpp \
- /usr/include/c++/14.2.1/version /usr/include/c++/14.2.1/cassert \
- /usr/include/assert.h /usr/include/nlohmann/detail/string_escape.hpp \
+ /usr/include/c++/14.2.1/version \
+ /usr/include/nlohmann/detail/string_escape.hpp \
  /usr/include/nlohmann/detail/input/position_t.hpp \
  /usr/include/nlohmann/detail/meta/cpp_future.hpp \
  /usr/include/nlohmann/detail/meta/type_traits.hpp \
@@ -342,16 +457,21 @@ CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
  /usr/include/nlohmann/detail/meta/call_std/end.hpp \
  /usr/include/nlohmann/json_fwd.hpp \
  /usr/include/nlohmann/detail/string_concat.hpp \
- /usr/include/c++/14.2.1/cstring /usr/include/string.h \
- /usr/include/strings.h \
  /usr/include/nlohmann/detail/meta/identity_tag.hpp \
  /usr/include/nlohmann/detail/meta/std_fs.hpp \
  /usr/include/c++/14.2.1/filesystem /usr/include/c++/14.2.1/bits/fs_fwd.h \
  /usr/include/c++/14.2.1/bits/chrono.h /usr/include/c++/14.2.1/ratio \
+ /usr/include/c++/14.2.1/ctime \
  /usr/include/c++/14.2.1/bits/parse_numbers.h \
- /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/iomanip \
+ /usr/include/c++/14.2.1/bits/fs_path.h /usr/include/c++/14.2.1/locale \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/time_members.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/messages_members.h \
+ /usr/include/libintl.h \
+ /usr/include/c++/14.2.1/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/14.2.1/bits/locale_conv.h \
+ /usr/include/c++/14.2.1/iomanip \
  /usr/include/c++/14.2.1/bits/quoted_string.h \
- /usr/include/c++/14.2.1/sstream /usr/include/c++/14.2.1/bits/sstream.tcc \
  /usr/include/c++/14.2.1/codecvt /usr/include/c++/14.2.1/bits/fs_dir.h \
  /usr/include/c++/14.2.1/bits/fs_ops.h \
  /usr/include/nlohmann/detail/conversions/to_json.hpp \
@@ -381,12 +501,18 @@ CMakeFiles/Duq-Engine.dir/src/main.cpp.o: \
  /usr/include/nlohmann/ordered_map.hpp /usr/include/c++/14.2.1/any \
  /usr/include/nlohmann/detail/macro_unscope.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/function/math.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/function/conversions.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/function/data.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/function/time.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/cli/informationType.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/cli/coloredText.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/render/window.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/render/sprites.h \
- /home/johnnya/Desktop/Programming/C++/Duq-Engine/src/./components/entity/sprites.h
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/math.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/conversions.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/scene/scene.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/data.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/time.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/input.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/cli/informationType.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/cli/coloredText.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/render/window.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/render/graphics.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/render/sprite.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/entity/entity.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/entity/player.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/render/camera.h \
+ /home/johnny/Desktop/Programming/C++/Duq-Engine/src/components/function/game.h
