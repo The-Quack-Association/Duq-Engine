@@ -1,0 +1,158 @@
+Application - Owns the window, initializes raylib, runs the loop
+
+Engine - Owns and coordinates engine subsystems
+
+Game - Contains your actual game-specific logic
+
+MyGame/
+│
+├── CMakeLists.txt
+├── CMakePresets.json
+├── .gitignore
+├── README.md
+│
+├── cmake/
+│   ├── Dependencies.cmake
+│   ├── CompilerWarnings.cmake
+│   └── Platform.cmake
+│
+├── include/
+│   └── engine/
+│       │
+│       ├── core/
+│       │   ├── Application.hpp
+│       │   ├── Game.hpp
+│       │   ├── Engine.hpp
+│       │   ├── Time.hpp
+│       │   ├── Logger.hpp
+│       │   ├── Config.hpp
+│       │   └── Types.hpp
+│       │
+│       ├── scene/
+│       │   ├── Scene.hpp
+│       │   ├── SceneManager.hpp
+│       │   └── SceneTransition.hpp
+│       │
+│       ├── ecs/
+│       │   ├── Entity.hpp
+│       │   ├── Component.hpp
+│       │   ├── EntityManager.hpp
+│       │   └── System.hpp
+│       │
+│       ├── input/
+│       │   ├── Input.hpp
+│       │   ├── InputManager.hpp
+│       │   └── InputActions.hpp
+│       │
+│       ├── rendering/
+│       │   ├── Renderer.hpp
+│       │   ├── Camera.hpp
+│       │   ├── Texture.hpp
+│       │   ├── Sprite.hpp
+│       │   ├── Shader.hpp
+│       │   ├── RenderTarget.hpp
+│       │   └── Animation.hpp
+│       │
+│       ├── resources/
+│       │   ├── AssetManager.hpp
+│       │   ├── Resource.hpp
+│       │   ├── TextureManager.hpp
+│       │   ├── AudioManager.hpp
+│       │   └── ResourceHandle.hpp
+│       │
+│       ├── audio/
+│       │   ├── Audio.hpp
+│       │   ├── Sound.hpp
+│       │   └── Music.hpp
+│       │
+│       ├── physics/
+│       │   ├── PhysicsWorld.hpp
+│       │   ├── Collider.hpp
+│       │   ├── Collision.hpp
+│       │   └── Raycast.hpp
+│       │
+│       ├── ui/
+│       │   ├── UIElement.hpp
+│       │   ├── UIButton.hpp
+│       │   ├── UILabel.hpp
+│       │   ├── UIImage.hpp
+│       │   └── UIManager.hpp
+│       │
+│       ├── animation/
+│       │   ├── Animator.hpp
+│       │   └── AnimationController.hpp
+│       │
+│       ├── particles/
+│       │   ├── Particle.hpp
+│       │   ├── ParticleEmitter.hpp
+│       │   └── ParticleSystem.hpp
+│       │
+│       ├── save/
+│       │   ├── SaveManager.hpp
+│       │   └── SaveData.hpp
+│       │
+│       ├── platform/
+│       │   ├── Platform.hpp
+│       │   └── FileSystem.hpp
+│       │
+│       └── debug/
+│           ├── Debug.hpp
+│           ├── DebugDraw.hpp
+│           └── Profiler.hpp
+│
+├── src/
+│   ├── main.cpp
+│   │
+│   └── engine/
+│       ├── core/
+│       ├── scene/
+│       ├── ecs/
+│       ├── input/
+│       ├── rendering/
+│       ├── resources/
+│       ├── audio/
+│       ├── physics/
+│       ├── ui/
+│       ├── animation/
+│       ├── particles/
+│       ├── save/
+│       ├── platform/
+│       └── debug/
+│
+├── game/
+│   ├── include/
+│   │   └── game/
+│   │       ├── Game.hpp
+│   │       ├── entities/
+│   │       │   ├── Player.hpp
+│   │       │   └── Enemy.hpp
+│   │       ├── components/
+│   │       │   ├── HealthComponent.hpp
+│   │       │   └── MovementComponent.hpp
+│   │       └── scenes/
+│   │           ├── MainMenuScene.hpp
+│   │           ├── GameplayScene.hpp
+│   │           └── PauseScene.hpp
+│   │
+│   └── src/
+│       ├── Game.cpp
+│       ├── entities/
+│       ├── components/
+│       └── scenes/
+│
+├── assets/
+│   ├── textures/
+│   ├── sprites/
+│   ├── fonts/
+│   ├── audio/
+│   ├── music/
+│   ├── shaders/
+│   ├── maps/
+│   ├── animations/
+│   └── data/
+│
+├── tests/
+│   ├── CMakeLists.txt
+│   └── test_main.cpp
+│
+└── build/

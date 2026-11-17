@@ -1,2 +1,0 @@
-"/usr/bin/gcc-ar" qc libglad.a CMakeFiles/glad.dir/include/glad/src/gl.c.o
-"/usr/bin/gcc-ranlib" libglad.a

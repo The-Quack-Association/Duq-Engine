@@ -1,84 +1,78 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_CXX_STANDARD 17)
+project(Duq-Engine LANGUAGES CXX)
 
-#! ! ! ! ! ! !
-#set this to true to ship the game!
-#basically this will change the RESOURCES_PATH to be the local path
-#! ! ! ! ! ! !
-#DELETE THE OUT FOLDER AFTER CHANGING THIS BECAUSE VISUAL STUDIO DOESN'T SEEM TO RECOGNIZE THIS CHANGE AND REBUILD!
-option(PRODUCTION_BUILD "Make this a production build!" OFF)
-#DELETE THE OUT FOLDER AFTER CHANGING THIS BECAUSE VISUAL STUDIO DOESN'T SEEM TO RECOGNIZE THIS CHANGE AND REBUILD!
+# C++ Standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Build options
+option(BUILD_TESTING "Build tests" OFF)
 
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+# Raylib configuration
+set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) #link time optimization
+include(FetchContent)
 
-if(MSVC) 
-add_compile_options(/arch:AVX2) #make sure SIMD optimizations take place
-endif()
-
-project(Duq-Engine)
-
-set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-
-# Add libraries if needed
-add_subdirectory(include/glfw-3.4)
-set(GLAD_DIR "${CMAKE_SOURCE_DIR}/include/glad")
-include_directories(${GLAD_DIR}/include)
-add_subdirectory(include/glm)
-add_library(glad STATIC ${GLAD_DIR}/src/gl.c)
-
-# MY_SOURCES is defined to be a list of all the source files for my game 
-# DON'T ADD THE SOURCES BY HAND, they are already added with this macro
-file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
-
-
-add_executable("${CMAKE_PROJECT_NAME}")
-
-set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY CXX_STANDARD 17)
-
-target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC GLFW_INCLUDE_NONE=1)
-
-if(PRODUCTION_BUILD)
-	# setup the ASSETS_PATH macro to be in the root folder of your exe
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RESOURCES_PATH="./resources/") 
-
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC PRODUCTION_BUILD=1) 
-
-else()
-	# This is useful to get an ASSETS_PATH in your IDE during development
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/")
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC PRODUCTION_BUILD=0) 
-
-endif()
-
-target_sources("${CMAKE_PROJECT_NAME}" PRIVATE ${MY_SOURCES} )
-
-
-if(MSVC) # If using the VS compiler...
-
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC _CRT_SECURE_NO_WARNINGS)
-
-
-	#YOU CAN REMOVE THE CONSOLE WITH THIS LINE! YOU CAN EVEN DO AN IF PRODUCTION_BUILD TO REMOVE IT ONLY IN PRODUCTION BUILDS
-	#set_target_properties("${CMAKE_PROJECT_NAME}" PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup") #no console
-	
-
-
-endif()
-
-target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
-
-
-target_link_libraries("${CMAKE_PROJECT_NAME}"
-	glfw
-	glm
-	glad
+FetchContent_Declare(
+    raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 6.0
+    GIT_SHALLOW TRUE
 )
+
+FetchContent_MakeAvailable(raylib)
+
+# Project directories
+add_subdirectory(src)
+add_subdirectory(game)
+
+
+# cmake_minimum_required(VERSION 3.20)
+
+# project(Duq-Engine LANGUAGES CXX)
+
+# # C++20
+# set(CMAKE_CXX_STANDARD 20)
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_EXTENSIONS OFF)
+
+# # Don't build raylib's examples
+# set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
+# # Download raylib automatically
+# include(FetchContent)
+
+# FetchContent_Declare(
+#     raylib
+#     GIT_REPOSITORY https://github.com/raysan5/raylib.git
+#     GIT_TAG 6.0
+#     GIT_SHALLOW TRUE
+# )
+
+# FetchContent_MakeAvailable(raylib)
+
+# # Your executable
+# add_executable(Duq-Engine
+#     src/main.cpp
+#     src/game.cpp
+# )
+
+# # Header Files
+# target_include_directories(Duq-Engine PRIVATE
+#     include
+# )
+
+# # Link raylib
+# target_link_libraries(Duq-Engine PRIVATE raylib)
+
+# # Include your own headers
+# target_include_directories(Duq-Engine PRIVATE include)
+
+# # Copy assets next to the executable
+# add_custom_command(TARGET Duq-Engine POST_BUILD
+#     COMMAND ${CMAKE_COMMAND} -E copy_directory
+#     "${CMAKE_SOURCE_DIR}/assets"
+#     "$<TARGET_FILE_DIR:Duq-Engine>/assets"
+# )
