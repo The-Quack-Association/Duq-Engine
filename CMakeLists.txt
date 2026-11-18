@@ -25,7 +25,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(raylib)
 
 # Project directories
-add_subdirectory(src)
+add_subdirectory(engine)
 add_subdirectory(game)
 
 

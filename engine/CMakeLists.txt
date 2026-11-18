@@ -1,6 +1,6 @@
 # Collect engine source files
 file(GLOB_RECURSE ENGINE_SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_SOURCE_DIR}/engine/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
 # Engine library
@@ -10,7 +10,7 @@ add_library(duq_engine STATIC
 
 # Public include directories
 target_include_directories(duq_engine PUBLIC
-    "${PROJECT_SOURCE_DIR}/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
 # Link raylib

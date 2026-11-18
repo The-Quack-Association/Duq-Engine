@@ -1,4 +1,3 @@
-
 # Collect game source files
 file(GLOB_RECURSE GAME_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
@@ -6,7 +5,6 @@ file(GLOB_RECURSE GAME_SOURCES CONFIGURE_DEPENDS
 
 # Game executable
 add_executable(Duq-Engine
-    "${PROJECT_SOURCE_DIR}/src/main.cpp"
     ${GAME_SOURCES}
 )
 
